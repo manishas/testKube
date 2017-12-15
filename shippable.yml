@@ -1,0 +1,16 @@
+build:
+  ci:
+    - ./cmd/env
+  post_ci:
+    - echo "$KUBECONFIG_INTEGRATION_KUBECONFIG"
+
+resources:
+  - name: kubeconfig
+    type: integration
+    integration: kubeconfig_manishas
+
+jobs:
+  - name: testKube_runCI
+    type: runCI
+    steps:
+      - IN: kubeconfig
