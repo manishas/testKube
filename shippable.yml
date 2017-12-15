@@ -1,7 +1,6 @@
 build:
   ci:
-    - ./cmd/env
-  post_ci:
+    - echo "$KUBECONFIG_INTEGRATION_KUBECONFIGCONTENT"
     - echo "$KUBECONFIG_INTEGRATION_KUBECONFIG"
 
 resources:
